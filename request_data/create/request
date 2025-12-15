@@ -1,0 +1,9 @@
+POST /session/create?userId=group-3 HTTP/2
+Host: crypto-assignment.dangduongminhnhat2003.workers.dev
+X-User-Id: group-3
+Content-Type: application/json; charset=utf-8
+Content-Length: 22
+Accept-Encoding: gzip, deflate, br
+User-Agent: okhttp/4.11.0
+
+{"algorithm":"ecdh_3"}

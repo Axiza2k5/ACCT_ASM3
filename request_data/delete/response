@@ -1,0 +1,14 @@
+HTTP/2 200 OK
+Date: Sun, 14 Dec 2025 15:06:30 GMT
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Content-Type, X-Session-Token
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Vary: accept-encoding
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=M53skc4qfSxcaEydQpAxmmTIsSBLd3hlmJVPfN9ud9X3rBg6iGhMl9CN4iZcjBXsWzu%2Fd%2FgFgVJh2CtdtAPggJLCQ2o2JusWh35IZZ35ftv0sXMxVQRDAYBnswK3oIKUHLXlbr1hIcVmHBkgpw86WwDq6A%3D%3D"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+Server: cloudflare
+Cf-Ray: 9ade9b076d1003e7-HKG
+Alt-Svc: h3=":443"; ma=86400
+
+{"success":true,"message":"Session deleted successfully"}

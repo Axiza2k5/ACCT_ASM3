@@ -1,0 +1,28 @@
+HTTP/2 200 OK
+Date: Sun,
+ 14 Dec 2025 15:01:24 GMT
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Content-Type,
+ X-Session-Token
+Access-Control-Allow-Methods: GET,
+ POST,
+ OPTIONS
+Vary: accept-encoding
+Report-To: {"group":"cf-nel",
+"max_age":604800,
+"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=eEvjyrAjXirnM8BY6DohJIC1cQ8XP7lE5LoNO5OwrVVZr%2FjHAObdMZVCUg5tPTDhKx9zbqpUxIUoR4%2B%2F3ndlPFvRmZPqHL6%2F5RxrmdnDKKJIlfYXEh1Wok6FS7Ur11sEJhnPiforu6ykO7b4jp7yaWd8jg%3D%3D"}]}
+Nel: {"report_to":"cf-nel",
+"success_fraction":0.0,
+"max_age":604800}
+Server: cloudflare
+Cf-Ray: 9ade938d1dd1df9d-HKG
+Alt-Svc: h3=":443"; ma=86400
+
+{
+    "success":true,
+    "message":"Key exchange completed",
+    "algorithm":"ecdh_3",
+    "sessionToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTZWN1cmVDaGF0IiwiaWF0IjoxNzY1NzI0NDg0LCJleHAiOjE3NjU3MjQ3ODQsInN1YiI6Imdyb3VwLTMiLCJzaWQiOiJmZjQxZjdiNjE4ZjliODVmODc1M2FjOTIyZTgxMDljNGE5ZWQ4YTcyNDhiNjBlOTYwYzc1NWNmYjg2NTljMDJiIiwiYWxnb3JpdGhtIjoiZWNkaF8zIiwicHVibGljS2V5Ijp7IngiOiIzMjcyNDI2MDkxNzg3MzkyOTk1OTMzMzcyODQxMDgzODQzNTEwNzk4NTU1MzMxMzQyMTUyNjA2MjQ3NjIzNjgzNDk3MDg2ODMxMDAxIiwieSI6IjY2ODAyNzQ4NTM1NjAwNjk3MzcwMDE1MjE3MjMyOTUxOTA0ODAxMjQzNTM5OTE4MTc0MDc2OTkzMDMzOTI4ODA1MjI1MjA0NzYwNjg2In0sImVuY3J5cHRlZERhdGEiOiJnLTdKSF9Qb19oZXpQaTZma3BNVmxaZy1XUVZheVB2aGdJZkxvWW4tMDMxNjdKQzhza3pkSmp0NGpIUm5Cb05ZQ1d2TGwycGxXUjFwS0hTUkpSVUZCX2VDc0J1bi1wcExreVJMOTdYaGhCNmpGMXNKTGhXVy1qZjJLQy1pQjJpX0hQclVCZTUwQXBmUi1GRGktQWhzNkdQMEFacnBBYzlFU21UaEtRVnNwbGVaLWh6ZDVJN2F2cVJFcDlwVk5ZclQ3clNTOWxiVGQ1NDVwWHRWY1BmWW1hb1czNjRkUVB5RkJlNnVDUzVYeGw5ZUxqRW9kQVlpMjdEVWV1RmlnaFdPcXRmNTZ1MkIwSl9sNFROU3RqdXJSanNiYzRUVjdUeUJScEpQZ2QxMi1yaXh3a0RvWHRhOE1rM1BNbG01bUZ4bEF3IiwiY3JlYXRlZEF0IjoxNzY1NzI0NDg0NDYwLCJsYXN0QWN0aXZpdHkiOjE3NjU3MjQ0ODQ2ODF9.TdmiyYoTqyUf4Yx8d_HaVcVRynBkgI1yWM9g0mtTCpo",
+    "clientSignatureVerified":true
+}
