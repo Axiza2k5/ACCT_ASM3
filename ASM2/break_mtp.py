@@ -9,6 +9,43 @@ def decrypt(ciphertexts, key):
                 plaintext.append("<?>")
         print(f"{''.join(plaintext)}")
 
+from collections import Counter
+
+def solve_key(partial_key):
+    max_len = len(partial_key)
+    # Try periods from 1 to 30
+    for period in range(1, min(max_len, 30)):
+        candidate = [None] * period
+        valid_period = True
+        total_matches = 0
+        total_checked = 0
+        
+        for i in range(period):
+            values = [partial_key[j] for j in range(i, max_len, period) if partial_key[j] is not None]
+            
+            if not values:
+                # If we have no data for a position, we can't determine the key byte.
+                # But if the rest matches well, maybe we can guess or leave it?
+                # For now, let's require at least one value for each position in the period.
+                valid_period = False
+                break
+            
+            # Use voting to find the most likely byte
+            counts = Counter(values)
+            most_common, count = counts.most_common(1)[0]
+            
+            candidate[i] = most_common
+            total_matches += count
+            total_checked += len(values)
+            
+        if valid_period and total_checked > 0:
+            # Check if the consensus is strong enough
+            consistency = total_matches / total_checked
+            if consistency > 0.85: # Allow some errors (15%)
+                return bytes(candidate)
+                
+    return None
+
 def try_decrypt(ciphertexts):
     max_len = max(len(ct) for ct in ciphertexts)
     key = [None] * max_len
@@ -67,6 +104,18 @@ def try_decrypt(ciphertexts):
 
     print("\nRecovered Key (text):")
     print("".join(chr(k) if k is not None else "<?>" for k in key))
+    
+    return key
+
+    # auto_key = solve_key(key)
+    # if auto_key:
+    #     print(f"\nAutomatically recovered key: {auto_key}")
+    #     try:
+    #         print(f"Key (text): {auto_key.decode()}")
+    #     except:
+    #         pass
+
+    # return auto_key
 
 
 
@@ -79,7 +128,14 @@ if __name__ == "__main__":
 
 
     print("Try decrypt")
-    try_decrypt(ciphertexts)
+    auto_key = try_decrypt(ciphertexts)
+    print(f"\n\n raw key decryption:\n{auto_key}")
 
-    print("\n\nDecrypt with key b'Wellerman' found by try_decrypt:\n")
-    decrypt(ciphertexts,b'Wellerman')
+    key = solve_key(auto_key)
+    print(f"extract key decryption:\n{key}\n\n\n")
+
+    # print("\n\nDecrypt with key b'Wellerman' found by try_decrypt:\n")
+    if key:
+        decrypt(ciphertexts,key)
+    else:
+        print("Failed to automatically solve the key pattern.")
